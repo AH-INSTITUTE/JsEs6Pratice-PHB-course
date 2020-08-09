@@ -70,7 +70,7 @@ const multiline3 = `
 // const dobuleIt = function myFun(num){
 //     return num * 2;
 // }
-// const dobuleIt = num => * 2;// 1line  function arrow fat function
+// const dobuleIt = num => num * 2;// 1line  function arrow fat function
 // const res =  dobuleIt(5);
 // console.log(res);
 const add = (x,y) => x + y; 
@@ -111,5 +111,64 @@ console.log(min + ' min number of an array');
 
 
 //Class, constructor, create object from class
+// class Student{
+//     constructor(){
+//         this.id = 1;
+//         this.name = 'Abu';
+//     }
+// }
+class Student{
+    constructor(sId, sName){
+        this.id = sId;
+        this.name = sName;
+        this.school = 'Dharmokam High School'
+    }
+}
+const student1 = new Student(12,'HASAN');
+const student2 = new Student(18,'ABU');
+const student3 = new Student(25,'ABUHasan');
+console.log(student1,student2);
+console.log(student1.name,student2.id);
+console.log(student3);
 
 
+
+
+
+//Inheritance, extends class, super, class method
+class Parent {
+    constructor(){
+        this.fatherName = "Schwerznegger";
+    }
+}
+class Child extends Parent{
+    constructor(name){
+        super();
+        this.name = name;
+    }
+    getFullName(){
+        return this.name + " " + this.fatherName;
+    }
+}
+
+const baby = new Child("Arnold");
+const baby2 = new Child("Tom");
+console.log(baby.getFullName());
+console.log(baby2.getFullName());
+
+
+//23.9 DESTRUCTURE, OBJECT, ARRAY, DESTRUCTURE COMPLEX OBJECT
+
+const person = { name: 'Jack William', age: 17, job: 'facebooker', gfName: 'Ema Watson', address: 'Kochu Khet', phone: '01717112211', friends: ['Tom hancks', 'tom cruise', 'Tom yarn'] }
+
+const { address, phone, gfName, salary } = person;
+// const gfName = person.gfName;
+// const phone = person.phone;
+
+// console.log(gfName, phone, salary, address);
+// console.log(gfName, phone, salary, address);
+
+
+const friends = ['Sakib Khan', 'Arman Khan', 'Aamir Khan', 'Salman Khan', 'sharukh khan'];
+const [chotoFriend, ...olderF] = friends;
+console.log(olderF)
